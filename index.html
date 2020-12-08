@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+  
+    <script>
+        // Keeping score
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
+        // Array for computer choices
+
+        var choices = ["r", "p", "s"];
+
+        // Game loop
+
+        for (i = 0; i < 10; i++){
+            // Player's choice
+            var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
+
+            // Computer's choice
+            var computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            // Combat
+            if(playerChoice === computerChoice){
+                alert("It's a tie!");
+                ties++;
+            }
+            
+            else if((playerChoice === "r" && computerChoice === "s") || (playerChoice === "p" && computerChoice === "r") || (playerChoice === "s" && computerChoice === "p")){
+                alert("You win!");
+                wins++;
+            }
+
+            else if((playerChoice === "r" && computerChoice === "p") || (playerChoice === "p" && computerChoice === "s") || (playerChoice === "s" && computerChoice === "r")){
+                alert("You lost!");
+                losses++;
+            }
+            
+        }
+        
+        //Score reveals after 10 rounds
+        alert("Wins: " + wins + " Losses: " + losses + " Ties: " + ties);
+    </script>
+
+
+</body>
+</html>
