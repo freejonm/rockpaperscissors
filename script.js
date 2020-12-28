@@ -16,9 +16,7 @@ startBtn.addEventListener("click", function(){
 
      // Computer's choice
      var computerChoice = choices[Math.floor(Math.random() * choices.length)];
-     tieScore.textContent = ties;
-     pScore.textContent = wins;
-     cScore.textContent = losses;
+     
      // Combat
      
      if(playerChoice === computerChoice){
@@ -42,6 +40,10 @@ startBtn.addEventListener("click", function(){
      console.log("wins: " + wins);
      console.log("losses: " + losses);
      console.log("ties: " + ties);
+
+     tieScore.textContent = ties;
+     pScore.textContent = wins;
+     cScore.textContent = losses;
     })
 
 
