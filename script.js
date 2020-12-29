@@ -7,6 +7,8 @@ var rockBtn = document.querySelector("#rockBtn");
 var paperBtn = document.querySelector("#paperBtn");
 var scissorsBtn = document.querySelector("#scissorsBtn");
 
+var messages = document.querySelector("#messages");
+
 var wins = 0;
 var losses = 0;
 var ties = 0;
@@ -61,6 +63,7 @@ function combat(){
 }
 
 function playGame(){
+    messages.textContent = "Choose your weapon!"
     playerMove();
     computerMove();
     combat();
