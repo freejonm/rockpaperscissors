@@ -8,7 +8,8 @@ var paperBtn = document.querySelector("#paperBtn");
 var scissorsBtn = document.querySelector("#scissorsBtn");
 
 var messages1 = document.querySelector("#messages1");
-var messages2 = document.querySelector("#messages2")
+var messages2 = document.querySelector("#messages2");
+var result = document.querySelector("#result");
 
 var wins = 0;
 var losses = 0;
@@ -33,19 +34,19 @@ function computerMove(){
 
 function combat(){
     if(playerChoice === computerChoice){
-        messages1.textContent = "It's a tie!";
+        result.textContent = "It's a tie!";
         ties++;
         
     }
     
     else if((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")){
-        messages1.textContent = "You win!";
+        result.textContent = "You win!";
         wins++;
        
     }
 
     else if((playerChoice === "Rock" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Scissors" && computerChoice === "Rock")){
-        messages1.textContent = "You lost!";
+        result.textContent = "You lost!";
         losses++;
         
     }
