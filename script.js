@@ -2,6 +2,7 @@ var pScore = document.querySelector("#pScore");
 var cScore = document.querySelector("#cScore");
 var tieScore = document.querySelector("#tieScore");
 
+var startBtn = document.querySelector("#start");
 var rockBtn = document.querySelector("#rockBtn");
 var paperBtn = document.querySelector("#paperBtn");
 var scissorsBtn = document.querySelector("#scissorsBtn");
@@ -13,27 +14,43 @@ var ties = 0;
 var choices = ["Rock", "Paper", "Scissors"];
 
 
+var playerChoice = "";
+var computerChoice = "";
 
-     // Player's choice
-rockBtn.addEventListener("click", function(){
-         console.log(this.textContent);
+function playerMove(){
+    rockBtn.addEventListener("click", function(){
+         playerChoice = this.textContent;
+         
      })
 
     paperBtn.addEventListener("click", function(){
-        console.log(this.textContent);
+        playerChoice = this.textContent;
+        
     })
+
     scissorsBtn.addEventListener("click", function(){
-        console.log(this.textContent);
+        playerChoice = this.textContent;
+        
     })
+}
 
-    
+function computerMove(){
+    computerChoice = choices[Math.floor(Math.random() * choices.length)]
+}
 
-    //  var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
-    
-     // Computer's choice
-     var computerChoice = choices[Math.floor(Math.random() * choices.length)];
+function playGame(){
+    playerMove();
+    computerMove();
+}
+
+startBtn.addEventListener("click", playGame);
+
+
+
+
+ 
      
-     // Combat
+    //  // Combat
      
      if(playerChoice === computerChoice){
          alert("It's a tie!");
@@ -41,13 +58,13 @@ rockBtn.addEventListener("click", function(){
          
      }
      
-     else if((playerChoice === "r" && computerChoice === "s") || (playerChoice === "p" && computerChoice === "r") || (playerChoice === "s" && computerChoice === "p")){
+     else if((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")){
          alert("You win!");
          wins++;
         
      }
 
-     else if((playerChoice === "r" && computerChoice === "p") || (playerChoice === "p" && computerChoice === "s") || (playerChoice === "s" && computerChoice === "r")){
+     else if((playerChoice === "Rock" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Scissors" && computerChoice === "Rock")){
          alert("You lost!");
          losses++;
          
