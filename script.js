@@ -32,47 +32,44 @@ function playerMove(){
         playerChoice = this.textContent;
         
     })
+    console.log(playerChoice);
 }
 
 function computerMove(){
     computerChoice = choices[Math.floor(Math.random() * choices.length)]
+    console.log(computerChoice);
+}
+
+function combat(){
+    if(playerChoice === computerChoice){
+        alert("It's a tie!");
+        ties++;
+        
+    }
+    
+    else if((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")){
+        alert("You win!");
+        wins++;
+       
+    }
+
+    else if((playerChoice === "Rock" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Scissors" && computerChoice === "Rock")){
+        alert("You lost!");
+        losses++;
+        
+    }
 }
 
 function playGame(){
     playerMove();
     computerMove();
+    combat();
 }
 
-startBtn.addEventListener("click", playGame);
-
-
-
-
- 
-     
-    //  // Combat
-     
-     if(playerChoice === computerChoice){
-         alert("It's a tie!");
-         ties++;
-         
-     }
-     
-     else if((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")){
-         alert("You win!");
-         wins++;
-        
-     }
-
-     else if((playerChoice === "Rock" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Scissors" && computerChoice === "Rock")){
-         alert("You lost!");
-         losses++;
-         
-     }
-     
-     console.log("wins: " + wins);
-     console.log("losses: " + losses);
-     console.log("ties: " + ties);
+startBtn.addEventListener("click", function(){
+    console.log("Start button pressed!")
+    playGame();
+});
 
      tieScore.textContent = ties;
      pScore.textContent = wins;
