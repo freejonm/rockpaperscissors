@@ -40,7 +40,7 @@ function playerMove(){
 
 function computerMove(){
     computerChoice = choices[Math.floor(Math.random() * choices.length)]
-    messages2.textContent = "The computer chose " + computerChoice;
+    messages2.textContent = "The computer chose " + computerChoice + ".";
 }
 
 function combat(){
