@@ -13,7 +13,7 @@ var choices = ["r", "p", "s"];
 startBtn.addEventListener("click", function(){
      // Player's choice
      var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
-
+    
      // Computer's choice
      var computerChoice = choices[Math.floor(Math.random() * choices.length)];
      
