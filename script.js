@@ -20,6 +20,12 @@ var choices = ["Rock", "Paper", "Scissors"];
 var playerChoice = "";
 var computerChoice = "";
 
+function setScore(){
+    tieScore.textContent = ties;
+    pScore.textContent = wins;
+    cScore.textContent = losses;
+}
+
 function computerMove(){
     computerChoice = choices[Math.floor(Math.random() * choices.length)]
     messages2.textContent = "The computer chose " + computerChoice + ".";
@@ -50,6 +56,7 @@ function playerMove(){
          playerChoice = this.textContent;
          computerMove();
          combat();
+         setScore();
          
      })
 
@@ -57,6 +64,7 @@ function playerMove(){
         playerChoice = this.textContent;
         computerMove();
         combat();
+        setScore();
         
     })
 
@@ -64,13 +72,11 @@ function playerMove(){
         playerChoice = this.textContent;
         computerMove();
         combat();
-        
+        setScore();
     })
     
     
 }
-
-
 
 
 function playGame(){
@@ -83,9 +89,7 @@ startBtn.addEventListener("click", function(){
     playGame();
 });
 
-     tieScore.textContent = ties;
-     pScore.textContent = wins;
-     cScore.textContent = losses;
+     
     
 
 
