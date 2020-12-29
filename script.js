@@ -7,7 +7,8 @@ var rockBtn = document.querySelector("#rockBtn");
 var paperBtn = document.querySelector("#paperBtn");
 var scissorsBtn = document.querySelector("#scissorsBtn");
 
-var messages = document.querySelector("#messages");
+var messages1 = document.querySelector("#messages1");
+var messages2 = document.querySelector("#messages2")
 
 var wins = 0;
 var losses = 0;
@@ -39,7 +40,7 @@ function playerMove(){
 
 function computerMove(){
     computerChoice = choices[Math.floor(Math.random() * choices.length)]
-    console.log(computerChoice);
+    messages2.textContent = "The computer chose " + computerChoice;
 }
 
 function combat(){
@@ -63,7 +64,7 @@ function combat(){
 }
 
 function playGame(){
-    messages.textContent = "Choose your weapon!"
+    messages1.textContent = "Choose your weapon!"
     playerMove();
     computerMove();
     combat();
