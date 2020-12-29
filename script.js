@@ -1,10 +1,10 @@
 var pScore = document.querySelector("#pScore");
 var cScore = document.querySelector("#cScore");
 var tieScore = document.querySelector("#tieScore");
-var startBtn = document.querySelector("#button");
-var rockBtn = document.querySelector("#rock");
-var paperBtn = document.querySelector("#paper")
-var scisBtn = document.querySelector("#scissors");
+
+var rockBtn = document.querySelector("#rockBtn");
+var paperBtn = document.querySelector("#paperBtn");
+var scissorsBtn = document.querySelector("#scissorsBtn");
 
 var wins = 0;
 var losses = 0;
@@ -12,11 +12,21 @@ var ties = 0;
 
 var choices = ["Rock", "Paper", "Scissors"];
 
-startBtn.addEventListener("click", function(){
+
+
      // Player's choice
-     rockBtn.addEventListener("click", function(){
+rockBtn.addEventListener("click", function(){
          console.log(this.textContent);
      })
+
+    paperBtn.addEventListener("click", function(){
+        console.log(this.textContent);
+    })
+    scissorsBtn.addEventListener("click", function(){
+        console.log(this.textContent);
+    })
+
+    
 
     //  var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
     
@@ -50,6 +60,6 @@ startBtn.addEventListener("click", function(){
      tieScore.textContent = ties;
      pScore.textContent = wins;
      cScore.textContent = losses;
-    })
+    
 
 
