@@ -20,24 +20,6 @@ var choices = ["Rock", "Paper", "Scissors"];
 var playerChoice = "";
 var computerChoice = "";
 
-function playerMove(){
-    rockBtn.addEventListener("click", function(){
-         playerChoice = this.textContent;
-         
-     })
-
-    paperBtn.addEventListener("click", function(){
-        playerChoice = this.textContent;
-        
-    })
-
-    scissorsBtn.addEventListener("click", function(){
-        playerChoice = this.textContent;
-        
-    })
-    console.log(playerChoice);
-}
-
 function computerMove(){
     computerChoice = choices[Math.floor(Math.random() * choices.length)]
     messages2.textContent = "The computer chose " + computerChoice + ".";
@@ -45,29 +27,55 @@ function computerMove(){
 
 function combat(){
     if(playerChoice === computerChoice){
-        alert("It's a tie!");
+        messages1.textContent = "It's a tie!";
         ties++;
         
     }
     
     else if((playerChoice === "Rock" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Scissors" && computerChoice === "Paper")){
-        alert("You win!");
+        messages1.textContent = "You win!";
         wins++;
        
     }
 
     else if((playerChoice === "Rock" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Scissors" && computerChoice === "Rock")){
-        alert("You lost!");
+        messages1.textContent = "You lost!";
         losses++;
         
     }
 }
 
+function playerMove(){
+    rockBtn.addEventListener("click", function(){
+         playerChoice = this.textContent;
+         computerMove();
+         combat();
+         
+     })
+
+    paperBtn.addEventListener("click", function(){
+        playerChoice = this.textContent;
+        computerMove();
+        combat();
+        
+    })
+
+    scissorsBtn.addEventListener("click", function(){
+        playerChoice = this.textContent;
+        computerMove();
+        combat();
+        
+    })
+    
+    
+}
+
+
+
+
 function playGame(){
     messages1.textContent = "Choose your weapon!"
     playerMove();
-    computerMove();
-    combat();
 }
 
 startBtn.addEventListener("click", function(){
