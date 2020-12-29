@@ -2,17 +2,23 @@ var pScore = document.querySelector("#pScore");
 var cScore = document.querySelector("#cScore");
 var tieScore = document.querySelector("#tieScore");
 var startBtn = document.querySelector("#button");
-
+var rockBtn = document.querySelector("#rock");
+var paperBtn = document.querySelector("#paper")
+var scisBtn = document.querySelector("#scissors");
 
 var wins = 0;
 var losses = 0;
 var ties = 0;
 
-var choices = ["r", "p", "s"];
+var choices = ["Rock", "Paper", "Scissors"];
 
 startBtn.addEventListener("click", function(){
      // Player's choice
-     var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
+     rockBtn.addEventListener("click", function(){
+         console.log(this.textContent);
+     })
+
+    //  var playerChoice = prompt("Choose r (rock), p (paper), or s (scissors)");
     
      // Computer's choice
      var computerChoice = choices[Math.floor(Math.random() * choices.length)];
